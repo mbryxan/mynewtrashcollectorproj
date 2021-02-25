@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
@@ -41,6 +42,7 @@ namespace MyNewTrashCollector.Areas.Identity.Pages.Account
 
         [BindProperty]
         public InputModel Input { get; set; }
+        public SelectList Roles { get; set; } //added
 
         public string ReturnUrl { get; set; }
 
@@ -72,6 +74,8 @@ namespace MyNewTrashCollector.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            var roles = _roleManager.Roles; //added
+            Roles = new SelectList(roles, "Name", "Name"); //added
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
