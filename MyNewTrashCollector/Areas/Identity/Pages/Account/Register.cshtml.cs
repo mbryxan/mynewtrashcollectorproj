@@ -63,6 +63,9 @@ namespace MyNewTrashCollector.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            [Required] //added
+            public string Role { get; set; } //added
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)
