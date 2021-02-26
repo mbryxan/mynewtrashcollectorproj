@@ -11,7 +11,7 @@ using MyNewTrashCollector.Models;
 
 namespace MyNewTrashCollector.Controllers
 {
-    //[Authorize(Roles = "Customer")]
+    [Authorize(Roles = "Customer")]
    
     public class CustomersController : Controller
     {

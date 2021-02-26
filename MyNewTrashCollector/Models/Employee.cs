@@ -12,7 +12,9 @@ namespace MyNewTrashCollector.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Employee Name")]
         public string EmployeeName { get; set; }
+        [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
 
         [ForeignKey("IdentityUser")]
