@@ -11,7 +11,7 @@ using MyNewTrashCollector.Models;
 
 namespace MyNewTrashCollector.Controllers
 {
-    [Authorize(Roles = "Customer")]
+    //[Authorize(Roles = "Customer")]
    
     public class CustomersController : Controller
     {
@@ -45,7 +45,8 @@ namespace MyNewTrashCollector.Controllers
                 return NotFound();
             }
 
-            return View(customer);
+            return View("Details", customer);
+            
         }
 
         // GET: Customers/Create
