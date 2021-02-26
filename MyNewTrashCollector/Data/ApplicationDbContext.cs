@@ -20,11 +20,11 @@ namespace MyNewTrashCollector.Data
             base.OnModelCreating(builder);
             builder.Entity<IdentityRole>()
                 .HasData(
-                    new IdentityRole
-                    {
-                        Name = "Admin",
-                        NormalizedName = "ADMIN"
-                     },
+                   // new IdentityRole
+                   //{
+                    //    Name = "Admin",
+                    //    NormalizedName = "ADMIN"
+                    // },
 
                      new IdentityRole
                      {
@@ -45,5 +45,8 @@ namespace MyNewTrashCollector.Data
     
 
         public DbSet<MyNewTrashCollector.Models.Customer> Customer { get; set; }
+    
+
+        public DbSet<MyNewTrashCollector.Models.Employee> Employee { get; set; }
     }
 }
