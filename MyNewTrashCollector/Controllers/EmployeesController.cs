@@ -44,6 +44,9 @@ namespace MyNewTrashCollector.Controllers
                 return NotFound();
             }
 
+            //var customer = _context.Customer.Where(c => c.ZipCode == "98133").ToList();
+            //return RedirectToAction("Details", customer);
+
             return View(employee);
         }
 
